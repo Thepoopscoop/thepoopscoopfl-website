@@ -1,47 +1,106 @@
+/* ---------- RESET ---------- */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ---------- COLORS ---------- */
+
+:root {
+    --green: #587533;
+    --dark: #222222;
+    --light: #fafaf8;
+    --white: #ffffff;
+}
+
+/* ---------- BODY ---------- */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #222;
-    background: #ffffff;
-    line-height: 1.6;
+    background: var(--light);
+    color: var(--dark);
 }
 
-header {
-    background: white;
-    text-align: center;
-    padding: 60px 20px;
-}
+/* ---------- CONTAINER ---------- */
 
-header h1 {
-    font-size: 4rem;
-    font-weight: 900;
-    color: #222;
-}
-
-header p {
-    font-size: 1.4rem;
-    color: #587533;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-main {
-    max-width: 1100px;
+.container {
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
-    padding: 50px 25px;
 }
 
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+    background: var(--white);
+    border-bottom: 1px solid #e6e6e6;
 }
 
-p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+}
+
+/* ---------- LOGO ---------- */
+
+.logo {
+    text-decoration: none;
+    color: var(--dark);
+
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+/* ---------- NAVIGATION ---------- */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+/* ---------- BUTTON ---------- */
+
+.quote-button {
+
+    background: var(--green);
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: .25s;
+
+}
+
+.quote-button:hover {
+
+    transform: translateY(-2px);
+
 }
