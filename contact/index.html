@@ -173,16 +173,18 @@
         <label for="service">Requested Service</label>
 
         <select
-            id="service"
-            name="Requested Service"
-            required>
+    id="service"
+    name="Requested Service"
+    required>
 
-            <option value="">Select...</option>
-            <option>Weekly Service</option>
-            <option>Twice Weekly</option>
-            <option>One-Time Cleanup</option>
+    <option value="">Select...</option>
+    <option value="Weekly Service - $20/visit">Weekly Service - $20/visit</option>
+    <option value="Twice Weekly - $15/visit">Twice Weekly - $15/visit</option>
+    <option value="Every Other Week - $30/visit">Every Other Week - $30/visit</option>
+    <option value="Monthly Maintenance - $40/visit">Monthly Maintenance - $40/visit</option>
+    <option value="One-Time Cleanup - $75">One-Time Cleanup - $75</option>
 
-        </select>
+</select>
 
     </div>
 
@@ -240,6 +242,27 @@
 </section>
 
 </main>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const selectedService = params.get("service");
+
+    const serviceMap = {
+        "weekly": "Weekly Service - $20/visit",
+        "twice-weekly": "Twice Weekly - $15/visit",
+        "every-other-week": "Every Other Week - $30/visit",
+        "monthly": "Monthly Maintenance - $40/visit",
+        "one-time": "One-Time Cleanup - $75"
+    };
+
+    const serviceSelect = document.getElementById("service");
+
+    if (selectedService && serviceMap[selectedService]) {
+        serviceSelect.value = serviceMap[selectedService];
+    } else {
+        serviceSelect.value = "Weekly Service - $20/visit";
+    }
+</script>
 
 <script src="/js/script.js"></script>
 

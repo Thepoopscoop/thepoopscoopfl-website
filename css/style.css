@@ -304,21 +304,58 @@ nav a:hover {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 30px;
 }
 
+.pricing-grid .pricing-card {
+    grid-column: span 2;
+}
+
+.pricing-grid .pricing-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.pricing-grid .pricing-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
 .pricing-card {
+    display: block;
     background: white;
     border-radius: 18px;
     padding: 20px 30px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,.05);
     transition: .25s;
+    text-decoration: none;
+    color: var(--dark);
 }
 
 .pricing-card:hover {
     transform: translateY(-8px);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--green);
+    transform: scale(1.03);
+    position: relative;
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-8px);
+}
+
+.featured-badge {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: .5px;
 }
 
 .pricing-card h2 {
@@ -967,6 +1004,10 @@ nav a {
 
     gap: 15px;
 
+}
+
+.pricing-grid .pricing-card {
+    grid-column: auto;
 }
 
 .pricing-card {
