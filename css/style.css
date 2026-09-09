@@ -1010,6 +1010,11 @@ nav a {
     grid-column: auto;
 }
 
+.pricing-grid .pricing-card:nth-child(4),
+.pricing-grid .pricing-card:nth-child(5) {
+    grid-column: auto;
+}
+
 .pricing-card {
 
     padding: 10px 30px;
